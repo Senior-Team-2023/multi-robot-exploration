@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 
 <launch>
-	<arg name="gazebo_world" value="/home/wsl-ros/multi-robot-exploration/draft1.world"/>
-	<arg name="gmapping_robot_a" value="true"/>
+	<!-- <node name="sensor_noise" pkg="multi_robot_exploration_pkg" type="sensor_noise.py" /> -->
 	<include file="$(find summit_xl_sim_bringup)/launch/summit_xls_complete.launch"/>
-	<!--<node name="autonomous_exploration" pkg="multi-robot-exploration_pkg" type="autonomous_exploration.py" />-->
+	<!--<node name="autonomous_exploration" pkg="multi_robot_exploration_pkg" type="autonomous_exploration.py" />-->
 	<!-- Multi-robot-mapping -->
-	<include file="$(find multi_robot_exploration_pkg)/launch/multi_robot.launch"/>
+	<!-- <include file="$(find multi_robot_exploration_pkg)/launch/multi_robot.launch"/> -->
 	
 
 </launch>
