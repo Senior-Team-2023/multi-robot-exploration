@@ -49,11 +49,22 @@
     <param name="discovery_rate" value="0.05"/>
     <param name="estimation_rate" value="0.1"/>
     <param name="estimation_confidence" value="1.0"/>
+
+    <!-- <remap from = "$(arg first_tb3)/map" to = "new_tb3_0_map"/>
+    <remap from = "$(arg second_tb3)/map" to = "new_tb3_1_map"/>
+    <remap from = "$(arg third_tb3)/map" to = "new_tb3_2_map"/> -->
   </node>
 
-  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="0 0 0 0 0 0 /map /$(arg first_tb3)/map 100"/>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="0 0 0 0 0 0 /map /$(arg first_tb3)/map 100"/>
   <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg second_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg second_tb3)/map 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg third_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg third_tb3)/map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg third_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg third_tb3)/map 100"/> -->
+  
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="$(arg first_tb3_x_pos) $(arg first_tb3_y_pos) $(arg first_tb3_z_pos) 0 0 $(arg first_tb3_yaw) /map /$(arg first_tb3)/map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg second_tb3)_tf_broadcaster" args="$(arg second_tb3_x_pos) $(arg second_tb3_y_pos) $(arg second_tb3_z_pos) 0 0 $(arg second_tb3_yaw) /map /$(arg second_tb3)/map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg third_tb3)_tf_broadcaster" args="$(arg third_tb3_x_pos) $(arg third_tb3_y_pos) $(arg third_tb3_z_pos) 0 0 $(arg third_tb3_yaw) /map /$(arg third_tb3)/map 100"/>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_new_$(arg first_tb3)_map" args="0 0 0 0 0 0 /map /new_tb3_0_map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to__new_$(arg second_tb3)_map" args="0 0 0 0 0 0 /map /new_tb3_1_map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to__new_$(arg third_tb3)_map" args="0 0 0 0 0 0 /map /new_tb3_2_map 100"/> -->
 </launch>
 
 <!-- http://wiki.ros.org/multirobot_map_merge -->

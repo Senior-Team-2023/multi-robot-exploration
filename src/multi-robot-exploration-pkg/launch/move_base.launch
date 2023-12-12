@@ -8,8 +8,8 @@
   <arg name="ns" default="tb3_0"/>
 
   <group ns='$(arg ns)'>
-    <!-- include auto explore launch -->
-    <include file="$(find multi-robot-exploration-pkg)/launch/explore.launch"></include>
+  <!-- include auto explore launch -->
+  <!-- <include file="$(find multi-robot-exploration-pkg)/launch/explore.launch"></include> -->
     <!-- move_base -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
       <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
