@@ -1,5 +1,0 @@
-int16 address
-int16 bit
-bool value
----
-bool ret

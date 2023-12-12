@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find multi-robot-exploration-pkg)/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="tb3_0"/>
+    </include>
+    <include file="$(find multi-robot-exploration-pkg)/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="tb3_1"/>
+    </include>
+    <include file="$(find multi-robot-exploration-pkg)/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="tb3_2"/>
+    </include>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find multi-robot-exploration-pkg)/rviz/multi_turtlebot3_slam.rviz"/>
+</launch>
