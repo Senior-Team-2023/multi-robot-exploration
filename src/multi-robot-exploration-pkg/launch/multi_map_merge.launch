@@ -2,6 +2,7 @@
   <arg name="first_tb3"  default="tb3_0"/>
   <arg name="second_tb3" default="tb3_1"/>
   <arg name="third_tb3"  default="tb3_2"/>
+  <arg name="fourth_tb3"  default="tb3_3"/>
 
   <arg name="first_tb3_x_pos" default="-7.0"/>
   <arg name="first_tb3_y_pos" default="-1.0"/>
@@ -9,7 +10,7 @@
   <arg name="first_tb3_yaw"   default=" 0.0"/>
 
   <arg name="second_tb3_x_pos" default=" 9.0"/>
-  <arg name="second_tb3_y_pos" default="-1.0"/>
+  <arg name="second_tb3_y_pos" default=" 7.0"/>
   <arg name="second_tb3_z_pos" default=" 0.0"/>
   <arg name="second_tb3_yaw"   default=" 0.0"/>
 
@@ -17,6 +18,11 @@
   <arg name="third_tb3_y_pos" default=" 8.0"/>
   <arg name="third_tb3_z_pos" default=" 0.0"/>
   <arg name="third_tb3_yaw"   default=" 0.0"/>
+
+  <arg name="fourth_tb3_x_pos" default=" 9.0"/>
+  <arg name="fourth_tb3_y_pos" default=" -8.0"/>
+  <arg name="fourth_tb3_z_pos" default=" 0.0"/>
+  <arg name="fourth_tb3_yaw"   default=" 0.0"/>
 
   <group ns="$(arg first_tb3)/map_merge">
     <param name="init_pose_x"   value="$(arg first_tb3_x_pos)"/>
@@ -38,6 +44,12 @@
     <param name="init_pose_z"   value="$(arg third_tb3_z_pos)"/>
     <param name="init_pose_yaw" value="$(arg third_tb3_yaw)"  />
   </group>
+  <group ns="$(arg fourth_tb3)/map_merge">
+    <param name="init_pose_x"   value="$(arg fourth_tb3_x_pos)"/>
+    <param name="init_pose_y"   value="$(arg fourth_tb3_y_pos)"/>
+    <param name="init_pose_z"   value="$(arg fourth_tb3_z_pos)"/>
+    <param name="init_pose_yaw" value="$(arg fourth_tb3_yaw)"  />
+  </group>
 
   <node pkg="multirobot_map_merge" type="map_merge" respawn="false" name="map_merge" output="screen">
     <param name="robot_map_topic" value="map"/>
@@ -54,6 +66,7 @@
   <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="0 0 0 0 0 0 /map /$(arg first_tb3)/map 100"/>
   <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg second_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg second_tb3)/map 100"/>
   <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg third_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg third_tb3)/map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg fourth_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg fourth_tb3)/map 100"/>
 </launch>
 
 <!-- http://wiki.ros.org/multirobot_map_merge -->
