@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="multi-robot-exploration-pkg" type="odom_noise.py" name="odom_noise"/>
+</launch>

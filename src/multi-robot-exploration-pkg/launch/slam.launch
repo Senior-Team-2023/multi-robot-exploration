@@ -9,5 +9,8 @@
         <arg name="ns" value="tb3_2"/>
     </include>
     <include file="$(find multi-robot-exploration-pkg)/launch/multi_map_merge.launch"></include>
+    <!-- Add odometry noise -->
+    <include file="$(find multi-robot-exploration-pkg)/launch/odom_noise.launch"></include>
+    <!-- Launch rviz -->
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find multi-robot-exploration-pkg)/rviz/multi_turtlebot3_slam.rviz"/>
 </launch>
