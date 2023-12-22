@@ -11,6 +11,9 @@
     <include file="$(find multi-robot-exploration-pkg)/launch/multi_turtlebot3_slam.launch">
         <arg name="ns" value="tb3_3"/>
     </include>
+    <include file="$(find multi-robot-exploration-pkg)/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="tb3_4"/>
+    </include>
     <include file="$(find multi-robot-exploration-pkg)/launch/multi_map_merge.launch"></include>
     <!-- Add odometry noise -->
     <include file="$(find multi-robot-exploration-pkg)/launch/odom_noise.launch"></include>

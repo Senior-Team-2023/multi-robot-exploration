@@ -11,4 +11,7 @@
     <include file="$(find multi-robot-exploration-pkg)/launch/move_base.launch">
         <arg name="ns" value="tb3_3"/>
     </include>
+    <include file="$(find multi-robot-exploration-pkg)/launch/move_base.launch">
+        <arg name="ns" value="tb3_4"/>
+    </include>
 </launch>
